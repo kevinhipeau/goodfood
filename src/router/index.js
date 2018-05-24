@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import MainLayout from '@/pages/layouts/MainLayout.vue'
+import Login from '@/pages/login.vue'
 import Product from '@/components/Product'
-
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
@@ -14,6 +14,11 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: MainLayout
+    },
+    {
+      path: '/login', //nom du parametre dans le router link
+      name: 'Login',
+      component: Login
     },
     {
       path: '/product',
