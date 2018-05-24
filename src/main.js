@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import navBar from './components/navBarPlugin'
+import cart from './components/cartPlugin'
+
 import 'vue-awesome/icons'
 
 import Icon from 'vue-awesome/components/Icon.vue'
@@ -17,6 +19,7 @@ Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 Vue.use(navBar)
+Vue.use(cart)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

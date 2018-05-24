@@ -26,12 +26,10 @@
                 </b-nav-item-dropdown>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
-
                 <b-button variant="outline-success" @click="goToLoginPage()">Se connecter</b-button>
                 <b-button class="register" href="#" variant="success">S'inscrire</b-button>
-                <b-nav-item href="#">
-                    <icon name="shopping-cart" />
-                </b-nav-item>
+
+                <cart></cart>
 
             </b-navbar-nav>
 
@@ -69,7 +67,9 @@ export default {
     },
     methods: {
         goToLoginPage() {
-            this.$router.push('/login')
+
+            console.log(this.$root.cartStore.item)
+            //this.$router.push('/login')
         }
     }
 
