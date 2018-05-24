@@ -2,8 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MainLayout from '@/pages/layouts/MainLayout.vue'
 import Login from '@/pages/login.vue'
+import Product from '@/components/Product'
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -16,7 +19,11 @@ export default new Router({
       path: '/login', //nom du parametre dans le router link
       name: 'Login',
       component: Login
-    }
-
+    },
+    {
+      path: '/product',
+      name: 'Product',
+      component: Product
+    },
   ]
 })

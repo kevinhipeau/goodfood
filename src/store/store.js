@@ -28,8 +28,8 @@ const state = {
 
  
 const getters = {
-    collections: state => state.collections,
-    products: state => state.map_collectionsProducts[state.currentCollectionID],
+   // collections: state => state.collections,
+    //products: state => state.map_collectionsProducts[state.currentCollectionID],*/
      /*isOnProducts: state => state.isProductsPage,
      sessionStarted: state => state.list_addedCollections.length ? true: state.list_addedProducts.length ? true: false,
      collectionsProducts: state => state.map_collectionsProducts,*/
