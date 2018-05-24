@@ -6,7 +6,7 @@
         <b-navbar-brand href="#">GoodFood</b-navbar-brand>
 
         <b-collapse is-nav id="nav_collapse">
-            <b-navbar-nav class="ml-left">
+            <b-navbar-nav>
 
                 <b-nav-item-dropdown text="Catégories" class="dropdown-large">
                     <b-container class="bv-example-row">
@@ -24,11 +24,10 @@
 
                     </b-container>
                 </b-nav-item-dropdown>
-
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
 
-                <b-button href="#" variant="outline-success">Se connecter</b-button>
+                <b-button variant="outline-success" @click="goToLoginPage()">Se connecter</b-button>
                 <b-button class="register" href="#" variant="success">S'inscrire</b-button>
                 <b-nav-item href="#">
                     <icon name="shopping-cart" />
@@ -54,25 +53,28 @@ export default {
         return {
             categories: []
         }
-    }, beforeMount() {
+    },
+    beforeMount() {
         this.$http.get('http://localhost/product/list').then(response => {
             // Fill the work's list
             response.body.forEach(product => {
                 this.categories.push(product);
                 console.log(this.categories[0].product_id)
-                // this.$http.get('http://localhost/work/' + work.id).then(response => {
-                //   this.list.push(response.body);
-                // }, response => {
-                //   console.log('Error ! Get work failed.');
-                // });
-            });
-            this.totalRows = response.body.total_rows;
-        }, response => {
-            console.log('Error ! Get work list failed.');
-        });
 
+                this.totalRows = response.body.total_rows;
+            }, response => {
+                console.log('Error ! Get work list failed.');
+            });
+        })
+    },
+    methods: {
+        goToLoginPage() {
+            this.$router.push('/login')
+        }
     }
+
 }
+
 </script>
 <style>
 .categories {
