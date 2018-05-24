@@ -2,7 +2,6 @@
     <div class="wrapper">
 
         <div class="main-panel">
-            <nav-bar></nav-bar>
 
         </div>
     </div>

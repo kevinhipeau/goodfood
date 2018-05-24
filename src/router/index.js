@@ -4,11 +4,13 @@ import MainLayout from '@/pages/layouts/MainLayout.vue'
 import Login from '@/pages/login.vue'
 import Product from '@/components/Product'
 import VueResource from 'vue-resource';
+
 Vue.use(VueResource);
 
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
