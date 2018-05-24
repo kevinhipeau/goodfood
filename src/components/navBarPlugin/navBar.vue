@@ -38,6 +38,11 @@ export default {
             type: String,
             default: ""
         }
+    },
+    methods:{
+        goToLoginPage(){
+            this.$router.push({path: "Login" })
+        }
     }
 }
 </script>
