@@ -1,6 +1,8 @@
 <template>
   <div class="products">
+    <h1>Categorie : {{this.$route.query.categorie}}</h1>
     <h1>{{ msg }}</h1>
+    <br>
 
     <b-card-group deck>
       <div v-for="product in list" v-bind:key="product._id">
@@ -34,6 +36,7 @@ export default {
     this.$http.get('http://localhost/product/category/'+ this.$route.query.categorie).then(response => {
       // Fill the product's list
       response.body.forEach(product => {
+        product.price = product.price.toFixed(2);
         this.list.push(product);
       });
       this.totalRows = response.body.total_rows;

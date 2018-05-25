@@ -3,7 +3,7 @@
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-        <b-navbar-brand href="#">GoodFood</b-navbar-brand>
+        <b-navbar-brand href="#">Food&Stuff</b-navbar-brand>
 
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
@@ -206,6 +206,10 @@ export default {
 .register {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.display-3 {
+    padding-top: 25px;
 }
 
 .nav {}
