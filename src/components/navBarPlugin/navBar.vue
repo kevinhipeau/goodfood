@@ -12,7 +12,7 @@
                     <b-container class="bv-example-row">
                         <b-col>
                             <li class="col-sm-3">
-                                <li v-for="item in categories" class="categories" :key="item.product_id">
+                                <li v-for="item in categories" class="categories" :key="item.product_id" v-bind:style="{ backgroundImage: 'url(static/' + item +'.jpg)' }">
                                     <a :href="'product?categorie=' + item">
                                         <p class="display-3">{{ item }}</p>
                                     </a>
