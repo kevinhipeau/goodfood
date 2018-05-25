@@ -16,6 +16,9 @@ const cartStore = {
         }
         this.updateCookie();
     },
+    deteleCookie() {
+        document.cookie = "item=";
+    },
     updateCookie() {
         document.cookie = "item=" + JSON.stringify(this.item);
     },

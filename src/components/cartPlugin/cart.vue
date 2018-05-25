@@ -27,6 +27,9 @@
                     </b-badge>
                     €
                 </b-button>
+                <b-button v-on:click="deleteI" class="mt-3" variant="warning">
+                    <icon name="shopping-cart" /> Vider mon panier €
+                </b-button>
             </b-modal>
         </div>
     </div>
@@ -64,6 +67,10 @@ export default {
         }
     },
     methods: {
+        deleteI() {
+            this.$root.cartStore.deteleCookie();
+            this.$root.cartStore.item = [];
+        },
         redirect() {
             window.location.href = 'checkout';
         },
