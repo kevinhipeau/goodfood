@@ -53,6 +53,7 @@ export default {
         }
     },
     beforeMount() {
+        this.cartStore.getItemCookie();
         this.$http.get('http://localhost/product/list').then(response => {
             // Fill the work's list
             response.body.forEach(product => {

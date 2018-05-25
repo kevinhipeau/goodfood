@@ -14,6 +14,21 @@ const cartStore = {
             aitem.quantity = 1;
             this.item.push(aitem);
         }
+        this.updateCookie();
+    },
+    updateCookie() {
+        document.cookie = "item=" + JSON.stringify(this.item);
+    },
+    getItemCookie() {
+        if (this.getCookie("item")) {
+            this.item = JSON.parse(this.getCookie("item"));
+        }
+
+    },
+    getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
     }
 }
 
