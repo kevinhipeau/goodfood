@@ -28,7 +28,7 @@
                     €
                 </b-button>
                 <b-button v-on:click="deleteI" class="mt-3" variant="warning">
-                    <icon name="shopping-cart" /> Vider mon panier €
+                    <icon name="shopping-cart" /> Vider mon panier
                 </b-button>
             </b-modal>
         </div>
