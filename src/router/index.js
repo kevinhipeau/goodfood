@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import MainLayout from '@/pages/layouts/MainLayout.vue'
 import Login from '@/pages/login.vue'
+import Checkout from '@/pages/checkout.vue'
 import Product from '@/components/Product'
 import VueResource from 'vue-resource';
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/product',
       name: 'Product',
       component: Product
+    },
+    {
+      path: '/checkout',
+      name: 'Checkout',
+      component: Checkout
     },
   ]
 })

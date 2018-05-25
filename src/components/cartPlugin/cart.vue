@@ -19,7 +19,8 @@
                         </template>
                     </b-table>
                 </b-container>
-                <b-button class="mt-3" variant="success" v-b-modal.modalC>
+
+                <b-button v-on:click="redirect" class="mt-3" variant="success" v-b-modal.modalC>
                     <icon name="shopping-cart" /> Payer
                     <b-badge variant="light">
                         {{precisionRound(this.$root.cartStore.item.reduce(function (acc,item) {return acc +item.quantity*item.price},0),2)}}
@@ -63,6 +64,9 @@ export default {
         }
     },
     methods: {
+        redirect() {
+            window.location.href = 'checkout';
+        },
         precisionRound(number, precision) {
             var factor = Math.pow(10, precision);
             return Math.round(number * factor) / factor;

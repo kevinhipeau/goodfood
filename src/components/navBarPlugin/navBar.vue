@@ -57,8 +57,6 @@ export default {
             // Fill the work's list
             response.body.forEach(product => {
                 this.categories.push(product);
-                // console.log(this.categories[0].product_id)
-
                 this.totalRows = response.body.total_rows;
             }, response => {
                 console.log('Error ! Get work list failed.');
