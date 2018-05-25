@@ -12,13 +12,11 @@
                     <b-container class="bv-example-row">
                         <b-col>
                             <li class="col-sm-3">
-                                <li v-for="item in categories" class="categories" :key="item.product_id" v-bind:style="{ backgroundImage: 'url(' + item.photo_url + ')' }">
-                                    <a href="/fff">
-                                        <p class="display-3">{{ item.name }}</p>
+                                <li v-for="item in categories" class="categories" :key="item.product_id">
+                                    <a :href="'product?categorie=' + item">
+                                        <p class="display-3">{{ item }}</p>
                                     </a>
-
                                 </li>
-
                             </li>
                         </b-col>
 
@@ -54,11 +52,12 @@ export default {
     },
     beforeMount() {
         this.cartStore.getItemCookie();
-        this.$http.get('http://localhost/product/list').then(response => {
+
+        this.$http.get('http://localhost/product/category/list').then(response => {
             // Fill the work's list
             response.body.forEach(product => {
                 this.categories.push(product);
-                console.log(this.categories[0].product_id)
+                // console.log(this.categories[0].product_id)
 
                 this.totalRows = response.body.total_rows;
             }, response => {

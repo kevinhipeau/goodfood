@@ -13,16 +13,6 @@
       </div>
     </b-card-group>
 
-    <div class="basket">
-      <h1>Mon panier</h1>
-      <div v-for="product in basket" v-bind:key="product._id">
-        <p>{{product.name}}</p>
-        <p>{{product.quantity}}</p>
-        <p>{{product.priceBasket}}</p>
-      </div>
-      <!-- <p>{{basket}}<p> -->
-    </div>
-
   </div>
 </template>
 
@@ -41,15 +31,10 @@ export default {
     };
   },
   beforeMount() {
-    this.$http.get('http://localhost/product/list').then(response => {
+    this.$http.get('http://localhost/product/category/'+ this.$route.query.categorie).then(response => {
       // Fill the product's list
       response.body.forEach(product => {
         this.list.push(product);
-        // this.$http.get('http://localhost/work/' + work.id).then(response => {
-        //   this.list.push(response.body);
-        // }, response => {
-        //   console.log('Error ! Get work failed.');
-        // });
       });
       this.totalRows = response.body.total_rows;
     }, response => {
@@ -58,11 +43,7 @@ export default {
   },
   methods: {
     addProduct: function(product) {
-
-
       this.cartStore.add(product);
-
-
     }
   },
   components: {
