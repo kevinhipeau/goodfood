@@ -73,6 +73,7 @@ li {
 
 .products {
   padding-top: 2rem;
+  padding: 0% 5% 0% 5%;
 }
 
 .wrapper {
